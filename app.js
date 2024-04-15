@@ -37,9 +37,16 @@ app.post("/test", async (req, res) => {
     const { title } = req.body;
     console.log(title);
 
+    const userId = await client1.user.findUnique({
+      where: { id: 1 }
+    })
+
+    console.log(userId);
+
+
     try {
       const test = await client2.test.create({
-        data: { title },
+        data: { title: title, authorId:  parseInt(userId.id)},
       });
       return res
         .status(201)

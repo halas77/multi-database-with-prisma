@@ -880,15 +880,18 @@ export namespace Prisma {
 
   export type TestAvgAggregateOutputType = {
     id: number | null
+    authorId: number | null
   }
 
   export type TestSumAggregateOutputType = {
     id: number | null
+    authorId: number | null
   }
 
   export type TestMinAggregateOutputType = {
     id: number | null
     title: string | null
+    authorId: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -896,6 +899,7 @@ export namespace Prisma {
   export type TestMaxAggregateOutputType = {
     id: number | null
     title: string | null
+    authorId: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -903,6 +907,7 @@ export namespace Prisma {
   export type TestCountAggregateOutputType = {
     id: number
     title: number
+    authorId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -911,15 +916,18 @@ export namespace Prisma {
 
   export type TestAvgAggregateInputType = {
     id?: true
+    authorId?: true
   }
 
   export type TestSumAggregateInputType = {
     id?: true
+    authorId?: true
   }
 
   export type TestMinAggregateInputType = {
     id?: true
     title?: true
+    authorId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -927,6 +935,7 @@ export namespace Prisma {
   export type TestMaxAggregateInputType = {
     id?: true
     title?: true
+    authorId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -934,6 +943,7 @@ export namespace Prisma {
   export type TestCountAggregateInputType = {
     id?: true
     title?: true
+    authorId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -1028,6 +1038,7 @@ export namespace Prisma {
   export type TestGroupByOutputType = {
     id: number
     title: string
+    authorId: number
     createdAt: Date
     updatedAt: Date
     _count: TestCountAggregateOutputType | null
@@ -1054,6 +1065,7 @@ export namespace Prisma {
   export type TestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
+    authorId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["test"]>
@@ -1061,6 +1073,7 @@ export namespace Prisma {
   export type TestSelectScalar = {
     id?: boolean
     title?: boolean
+    authorId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
@@ -1072,6 +1085,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       title: string
+      authorId: number
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["test"]>
@@ -1470,6 +1484,7 @@ export namespace Prisma {
   interface TestFieldRefs {
     readonly id: FieldRef<"Test", 'Int'>
     readonly title: FieldRef<"Test", 'String'>
+    readonly authorId: FieldRef<"Test", 'Int'>
     readonly createdAt: FieldRef<"Test", 'DateTime'>
     readonly updatedAt: FieldRef<"Test", 'DateTime'>
   }
@@ -1776,6 +1791,7 @@ export namespace Prisma {
   export const TestScalarFieldEnum: {
     id: 'id',
     title: 'title',
+    authorId: 'authorId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -1869,6 +1885,7 @@ export namespace Prisma {
     NOT?: TestWhereInput | TestWhereInput[]
     id?: IntFilter<"Test"> | number
     title?: StringFilter<"Test"> | string
+    authorId?: IntFilter<"Test"> | number
     createdAt?: DateTimeFilter<"Test"> | Date | string
     updatedAt?: DateTimeFilter<"Test"> | Date | string
   }
@@ -1876,6 +1893,7 @@ export namespace Prisma {
   export type TestOrderByWithRelationInput = {
     id?: SortOrder
     title?: SortOrder
+    authorId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -1886,6 +1904,7 @@ export namespace Prisma {
     OR?: TestWhereInput[]
     NOT?: TestWhereInput | TestWhereInput[]
     title?: StringFilter<"Test"> | string
+    authorId?: IntFilter<"Test"> | number
     createdAt?: DateTimeFilter<"Test"> | Date | string
     updatedAt?: DateTimeFilter<"Test"> | Date | string
   }, "id">
@@ -1893,6 +1912,7 @@ export namespace Prisma {
   export type TestOrderByWithAggregationInput = {
     id?: SortOrder
     title?: SortOrder
+    authorId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: TestCountOrderByAggregateInput
@@ -1908,12 +1928,14 @@ export namespace Prisma {
     NOT?: TestScalarWhereWithAggregatesInput | TestScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Test"> | number
     title?: StringWithAggregatesFilter<"Test"> | string
+    authorId?: IntWithAggregatesFilter<"Test"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Test"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Test"> | Date | string
   }
 
   export type TestCreateInput = {
     title: string
+    authorId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -1921,12 +1943,14 @@ export namespace Prisma {
   export type TestUncheckedCreateInput = {
     id?: number
     title: string
+    authorId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type TestUpdateInput = {
     title?: StringFieldUpdateOperationsInput | string
+    authorId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -1934,6 +1958,7 @@ export namespace Prisma {
   export type TestUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
+    authorId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -1941,12 +1966,14 @@ export namespace Prisma {
   export type TestCreateManyInput = {
     id?: number
     title: string
+    authorId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type TestUpdateManyMutationInput = {
     title?: StringFieldUpdateOperationsInput | string
+    authorId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -1954,6 +1981,7 @@ export namespace Prisma {
   export type TestUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
+    authorId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -1998,17 +2026,20 @@ export namespace Prisma {
   export type TestCountOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
+    authorId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type TestAvgOrderByAggregateInput = {
     id?: SortOrder
+    authorId?: SortOrder
   }
 
   export type TestMaxOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
+    authorId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -2016,12 +2047,14 @@ export namespace Prisma {
   export type TestMinOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
+    authorId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type TestSumOrderByAggregateInput = {
     id?: SortOrder
+    authorId?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2076,16 +2109,16 @@ export namespace Prisma {
     set?: string
   }
 
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
-  }
-
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
